@@ -1,4 +1,4 @@
-FROM omero_centos_base
+FROM omero_docker_centos_base
 MAINTAINER Douglas Russell <douglas_russell@hms.harvard.edu>
 
 # OMERO.server-5.2.6-ice36-b35
