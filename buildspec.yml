@@ -7,6 +7,8 @@ phases:
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION)
       - echo Pulling the base Docker image...
       - docker pull $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$BASE_IMAGE_REPO_NAME:$BASE_IMAGE_TAG
+      - echo Tagging base Docker image with local name...
+      - docker tag $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$BASE_IMAGE_REPO_NAME:$BASE_IMAGE_TAG $BASE_IMAGE_REPO_NAME
   build:
     commands:
       - echo Build started on `date`
